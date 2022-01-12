@@ -247,9 +247,12 @@ def banding_waktu(nama, berat, jenis_paket):
 
     # output hasil perbandingan
     x = PrettyTable()
-    x.field_names = ['Nama', 'Waktu Pengajuan', 'Berat (kg)', 'Kategori Paket', 'Masuk Antrean', 'Pengembalian Cucian', 'Harga']
-    x.add_row([nama, waktu_pengajuan, str_berat, paket, antrean_bojong, ambil_laundry_bojong, harga_bojong])
-    x.add_row([nama, waktu_pengajuan, str_berat, paket, antrean_soang, ambil_laundry_soang, harga_soang])
+    x.field_names = ['Laundry','Nama', 'Waktu Pengajuan', 'Berat (kg)', 'Kategori Paket', 'Masuk Antrean', 'Pengembalian Cucian', 'Harga']
+    bj = "Bojong"
+    sg = "Soang"
+    x.add_row([bj, nama, waktu_pengajuan, str_berat, paket, antrean_bojong, ambil_laundry_bojong, harga_bojong])
+    x.add_row([sg, nama, waktu_pengajuan, str_berat, paket, antrean_soang, ambil_laundry_soang, harga_soang])
+    print(f'\n ==== Perbandingan waktu dan harga dari kedua Laundry ====\n')
     print(x)
 
 
