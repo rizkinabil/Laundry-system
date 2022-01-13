@@ -24,12 +24,6 @@ topic_cl2bj = "berlangganan bojong"
 topic_cl2sn = "berlangganan soang"
 
 
-# generate client ID with pub prefix randomly
-# client_id = f'python-mqtt-{random.randint(0, 100)}'
-# username = 'emqx'
-# password = 'public'
-
-
 
 # on_message func untuk pesan telah berlangganan
 def sub_pesan() :
@@ -157,14 +151,6 @@ def langganan_soang(nama, berat, no_kategori):
     publish_reverse(nama, berat, no_kategori)
 
     client.loop_stop()
-    # client_mes.loop_stop()
-    # while topic_cl2bj != None:
-    #     time.sleep(1)
-    #     # client.loop_stop()
-    #     # client_mes.loop_stop()
-    #     stat = False
-        
-    # client.loop_stop()
 
 
 def menu():
@@ -236,7 +222,7 @@ def banding_waktu(nama, berat, jenis_paket):
             datetime.timedelta(
                 days=1) + datetime.timedelta(minutes=20) + datetime.timedelta(minutes=0)
         ambil_laundry_soang = str(waktu_pengerjaan.strftime(
-            '%d-%m-%y')) + ' ('+str(waktu_pengerjaan.strftime('n%H:%M:%S'))+') '
+            '%d-%m-%y')) + ' ('+str(waktu_pengerjaan.strftime('%H:%M:%S'))+') '
     elif jenis_paket == '3':
         harga_soang = str(int(des_berat * 10000))
         waktu_pengerjaan = today + \

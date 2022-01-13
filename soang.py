@@ -15,35 +15,6 @@ port = 1883
 topic = "Laundry Soang"
 
 topic_cl2sn = "berlangganan soang"
-# generate client ID with pub prefix randomly
-# client_id = f'python-mqtt-{random.randint(0, 1000)}'
-# username = 'emqx'
-# password = 'public'
-
-
-# def publish_sub_message(client):
-
-            
-#     msg = 'terima kasih sudah memilih laundry bojong'
-
-#     client.connect(broker, port)
-
-
-#     client.loop_start()
-#     # print('')
-#     # print('<> Publish data ke client </>')
-#     # time.sleep(2)
-#     # print('')
-
-
-#     client.publish(topic_cl2bj, msg)
-
-#     client.loop_stop()
-
-# def publish_feedback(client):
-
-#     feedback = 
-    
 
 def auto_sub(client):
     listSoang = []
@@ -64,15 +35,6 @@ def auto_sub(client):
         print('|         Pesanan Untuk Laundry Soang          |')
         print('+----------------------------------------------+')
         print(data_pesanan)
-        # nomor_list = range(1, len(listBojong)+1)
-        # print(tabulate(listBojong, headers=[
-        #     '   Nama    ', ' Berat   ', 'Kategori paket'
-        # ], tablefmt='pretty', showindex=nomor_list))
-
-    # def publish_to_client(nama, berat, kategori):
-    #     topic_p2client = 'lanjutan pesanan'
-    #     client_after = mqtt_client.Client(topic_p2client)
-
 
     topic_auto = 'autosub soang'
     client.on_connect = on_connect_autosub
@@ -122,11 +84,3 @@ if __name__ == '__main__':
             run()
         else:
             os._exit
-    # status = True
-    # while status:
-    #     # os.system('cls')
-    #     print('')
-    #     print('+------------------------------------------+')
-    #     print('|        Masukan data Laundry Bojong       |')
-    #     print('+------------------------------------------+')
-    #     status = False
